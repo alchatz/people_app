@@ -16,12 +16,12 @@
 .env.prd.json
 
 # Specific files & folders
-utils/services/http_error_handler.dart
-utils/services/people_api_services.dart
-presentation/cubits/people_cubit.dart
-presentation/cubits/people_state.dart
-presentation/pages/people_detail_page.dart
-presentation/pages/people_list_page.dart
+lib/utils/services/http_error_handler.dart
+lib/utils/services/people_api_services.dart
+lib/presentation/cubits/people_cubit.dart
+lib/presentation/cubits/people_state.dart
+lib/presentation/pages/people_detail_page.dart
+lib/presentation/pages/people_list_page.dart
 test/
 
 # As packages are no longer pinned, we use a lockfile for testing locally.
