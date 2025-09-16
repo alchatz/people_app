@@ -5,25 +5,13 @@ import '../../domain/entities/person_entity.dart';
 import '../cubits/people_extended_cubit.dart';
 
 // Page to display the details of a person
-class PersonDetailPageWRouter extends StatefulWidget {
+class PersonDetailPageWRouter extends StatelessWidget {
   final int personId;
-
   const PersonDetailPageWRouter({super.key, required this.personId});
 
   @override
-  State<PersonDetailPageWRouter> createState() => _PersonDetailScreenState();
-}
-
-class _PersonDetailScreenState extends State<PersonDetailPageWRouter> {
-  @override
-  void initState() {
-    super.initState();
-    // Triggers the person selection in the cubit when the screen is initialized
-    context.read<PeopleExtendedCubit>().selectPerson(widget.personId);
-  }
-
-  @override
   Widget build(BuildContext context) {
+    context.read<PeopleExtendedCubit>().selectPerson(personId);
     return Scaffold(
       appBar: AppBar(title: const Text('Person Details')),
       body: BlocBuilder<PeopleExtendedCubit, PeopleExtendedState>(
@@ -63,4 +51,3 @@ class _PersonDetailScreenState extends State<PersonDetailPageWRouter> {
     );
   }
 }
-
